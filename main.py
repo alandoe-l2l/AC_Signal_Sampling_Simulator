@@ -1,14 +1,14 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-actual_freq = 50 #Hz
-sample_interval = 85  #msec
-elapsed_time = 1 #sec
-samples = 1
+actual_freq = 60 #Hz        This is the actual frequency returned by the current transformer.
+sample_interval = 6  #msec  This is the sample interval of the SensorBot.
+elapsed_time = 1 #sec       This is the elapsed time to show on the chart.
+samples = 50    #           This places a marker on the chart after the number of samples have been captured.
 
 plt.figure(figsize=(12, 4))
 #create actual signal
-plt.plot(t2 := np.linspace(0, elapsed_time, 10000), np.sin(2 * np.pi * actual_freq * t2), 'b', label="Continuous Signal (50Hz)")
+plt.plot(t2 := np.linspace(0, elapsed_time, 10000), np.sin(2 * np.pi * actual_freq * t2), 'b', label=f"Continuous Signal ({actual_freq}Hz)")
 
 #create signal sampled
 t = np.linspace(0, elapsed_time, int(elapsed_time/(sample_interval/1000)), endpoint=False)
