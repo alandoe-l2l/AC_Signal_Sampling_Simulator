@@ -16,6 +16,7 @@ end = (t[samples])
 plt.plot(t, np.sin(2 * np.pi * actual_freq * t), 'r', label='Discrete Samples (interpolated)')
 plt.plot(end, np.sin(2 * np.pi * actual_freq * end), 'k*', label=f'Sample #{samples}', markersize=10)
 
+#arrange and annotate plot
 plt.xlabel('Seconds Elapsed')
 plt.ylabel('Voltage Measured')
 plt.title('Sampled Voltage vs. Actual Signal')
